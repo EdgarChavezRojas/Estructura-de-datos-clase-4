@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+void cargarmatriz(double [3][3], int , int );
+int mayormatriz(double [3][3], int, int);
+
+
+int main()
+{
+    const int i = 3, j = 3;
+    double K[i][j];
+    cargarmatriz(K, i, j);
+    cout<<"El mayor valor de la matriz es: "<<mayormatriz(K, i, j);
+    
+    return 0;
+}
+void cargarmatriz(double S[3][3], int t1, int t2){
+    for (int s = 0; s < t1; ++s) {
+        for (int a = 0; a < t2; ++a) {
+            cout << "Ingrese el valor para la fila " << s + 1 << " columna " << a + 1 << ": ";
+            cin >> S[s][a];
+        }
+    }
+}
+int mayormatriz(double W[3][3], int n1, int n2){
+    int mayor = W[0][0];
+    for (int m = 0; m < n1; ++m) {
+        for (int n = 0; n < n2; ++n) {
+            if(mayor < W[m][n]){
+                
+                mayor = W[m][n];
+            }
+            
+            
+        }
+    }
+    
+    return mayor;
+}
+
